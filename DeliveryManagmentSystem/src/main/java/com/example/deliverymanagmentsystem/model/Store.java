@@ -6,18 +6,21 @@ import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Store {
     @Id
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
     private String name;
+//    @NotNull
+//    private long user;
     @NotNull
-    private long user;
-    @NotNull
-    private long address;
+    private Address address;
 }

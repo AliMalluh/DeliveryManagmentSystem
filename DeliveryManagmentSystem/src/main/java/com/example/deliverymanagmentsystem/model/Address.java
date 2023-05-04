@@ -10,9 +10,6 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Address {
-    @Id
-    @NotNull
-    private long id;
     @NotNull
     private String country;
     @NotNull

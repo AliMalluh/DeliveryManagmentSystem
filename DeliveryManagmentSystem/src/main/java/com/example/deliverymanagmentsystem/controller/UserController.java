@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-@RestController // @controller
+@RestController
 @RequestMapping(path = "/user")
 public class UserController {
     @Autowired
@@ -27,6 +27,7 @@ public class UserController {
     public ResponseEntity update(@RequestBody User user) {
         userService.update(user);
         return new ResponseEntity(user,HttpStatus.OK);
+
     }
 
     @GetMapping("/{id}")
@@ -34,7 +35,6 @@ public class UserController {
         Optional<User> user = userService.get(id);
         return new ResponseEntity(user.get(), HttpStatus.OK);
     }
-
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAll() {
         List<User> users = userService.getAll();

@@ -21,6 +21,7 @@ public class StoreMapper implements RowMapper<Store> {
         address.setStreet(rs.getString("street"));
         address.setZipCode(rs.getString("zip_code"));
         store.setAddress(address);
+        store.setUserId(rs.getLong("user_id"));
         return store;
     }
 }

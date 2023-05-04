@@ -19,8 +19,7 @@ public class Store {
     private long id;
     @NotNull
     private String name;
-//    @NotNull
-//    private long user;
+    private long userId;
     @NotNull
     private Address address;
 }

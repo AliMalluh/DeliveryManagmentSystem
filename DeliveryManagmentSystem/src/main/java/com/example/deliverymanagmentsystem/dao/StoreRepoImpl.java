@@ -13,7 +13,7 @@ import java.util.Map;
 public class StoreRepoImpl implements StoreRepo {
     private static final String INSERT_STORE_QUERY = "INSERT INTO store(name,country, city, street, zip_code, user_id) "
             + "VALUES (:name, :country, :street, :city, :zipCode, :userId)";
-    private static final String GET_STORE_BY_ID_QUERY = "SELECT * FROM store WHERE id = :id";
+    private static final String GET_STORE_BY_ID_QUERY = "SELECT * FROM store JOIN user ON store.user_id = user.id WHERE store.id =:id ";
     @Autowired
     private NamedParameterJdbcOperations jdbcOperations;
 
@@ -35,7 +35,7 @@ public class StoreRepoImpl implements StoreRepo {
         params.addValue("city", store.getAddress().getCity());
         params.addValue("street", store.getAddress().getStreet());
         params.addValue("zipCode", store.getAddress().getZipCode());
-        params.addValue("userId", store.getUserId());
+        params.addValue("userId", store.getUser());
         jdbcOperations.update(INSERT_STORE_QUERY, params);
         return store;
     }

@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.util.Optional;
 
 
 @Data
@@ -19,7 +20,7 @@ public class Store {
     private long id;
     @NotNull
     private String name;
-    private long userId;
+    private Optional<User> user;
     @NotNull
     private Address address;
 }

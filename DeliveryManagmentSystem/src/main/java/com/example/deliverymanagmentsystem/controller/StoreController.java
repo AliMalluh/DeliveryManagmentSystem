@@ -1,14 +1,11 @@
 package com.example.deliverymanagmentsystem.controller;
 
 import com.example.deliverymanagmentsystem.model.Store;
-import com.example.deliverymanagmentsystem.model.User;
-import com.example.deliverymanagmentsystem.service.StoreService;
+import com.example.deliverymanagmentsystem.service.storeservice.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController // @controller
 @RequestMapping(path = "/store")

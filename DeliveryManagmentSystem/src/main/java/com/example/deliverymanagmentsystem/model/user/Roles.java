@@ -1,4 +1,4 @@
-package com.example.deliverymanagmentsystem.model;
+package com.example.deliverymanagmentsystem.model.user;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

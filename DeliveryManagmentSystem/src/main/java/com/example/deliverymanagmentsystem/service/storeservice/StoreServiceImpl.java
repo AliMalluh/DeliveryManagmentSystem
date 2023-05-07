@@ -1,6 +1,6 @@
-package com.example.deliverymanagmentsystem.service;
+package com.example.deliverymanagmentsystem.service.storeservice;
 
-import com.example.deliverymanagmentsystem.dao.StoreRepo;
+import com.example.deliverymanagmentsystem.dao.storerepo.StoreRepo;
 import com.example.deliverymanagmentsystem.model.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

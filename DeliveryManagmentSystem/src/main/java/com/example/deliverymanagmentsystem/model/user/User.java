@@ -1,9 +1,11 @@
-package com.example.deliverymanagmentsystem.model;
+package com.example.deliverymanagmentsystem.model.user;
 
+import com.example.deliverymanagmentsystem.model.Store;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
+
+
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.annotation.Id;
 
@@ -22,6 +24,8 @@ public class User {
     private String firstname;
     private String lastname;
     private Roles role;
+    private long storeId;
+    private Store store;
 
 }
 

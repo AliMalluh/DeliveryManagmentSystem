@@ -1,8 +1,8 @@
 package com.example.deliverymanagmentsystem;
 
-import com.example.deliverymanagmentsystem.model.Roles;
-import com.example.deliverymanagmentsystem.model.User;
-import com.example.deliverymanagmentsystem.service.UserServiceImpl;
+import com.example.deliverymanagmentsystem.model.user.Roles;
+import com.example.deliverymanagmentsystem.model.user.User;
+import com.example.deliverymanagmentsystem.service.userservice.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import org.junit.Test;

@@ -1,12 +1,10 @@
 package com.example.deliverymanagmentsystem;
 
-import com.example.deliverymanagmentsystem.model.Roles;
-import com.example.deliverymanagmentsystem.model.User;
+import com.example.deliverymanagmentsystem.model.user.Roles;
+import com.example.deliverymanagmentsystem.model.user.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

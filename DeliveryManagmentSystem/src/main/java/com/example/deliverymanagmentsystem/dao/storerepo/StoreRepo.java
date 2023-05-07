@@ -1,4 +1,4 @@
-package com.example.deliverymanagmentsystem.dao;
+package com.example.deliverymanagmentsystem.dao.storerepo;
 
 import com.example.deliverymanagmentsystem.model.Store;
 

@@ -1,9 +1,7 @@
-package com.example.deliverymanagmentsystem.service;
+package com.example.deliverymanagmentsystem.service.userservice;
 
-import com.example.deliverymanagmentsystem.controller.errors.NoDataFoundException;
-import com.example.deliverymanagmentsystem.dao.UserRepo;
-import com.example.deliverymanagmentsystem.model.User;
-import jakarta.servlet.http.HttpServletRequest;
+import com.example.deliverymanagmentsystem.dao.userrepo.UserRepo;
+import com.example.deliverymanagmentsystem.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.example.deliverymanagmentsystem.service;
+package com.example.deliverymanagmentsystem.service.userservice;
 
-import com.example.deliverymanagmentsystem.model.User;
+import com.example.deliverymanagmentsystem.model.user.User;
 
 import java.util.List;
 import java.util.Optional;

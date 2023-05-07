@@ -1,4 +1,4 @@
-package com.example.deliverymanagmentsystem.service;
+package com.example.deliverymanagmentsystem.service.storeservice;
 
 import com.example.deliverymanagmentsystem.model.Store;
 

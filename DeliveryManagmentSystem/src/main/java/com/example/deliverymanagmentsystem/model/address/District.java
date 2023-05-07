@@ -1,19 +1,18 @@
-package com.example.deliverymanagmentsystem.model;
+package com.example.deliverymanagmentsystem.model.address;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.data.annotation.Id;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Address {
+@AllArgsConstructor
+public class District {
     @NotNull
-    private String country;
+    private long districtId;
     @NotNull
-    private String city;
+    private String districtName;
     @NotNull
     private String street;
     @NotNull

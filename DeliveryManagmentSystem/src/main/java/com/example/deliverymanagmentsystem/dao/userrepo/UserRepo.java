@@ -1,8 +1,7 @@
-package com.example.deliverymanagmentsystem.dao;
+package com.example.deliverymanagmentsystem.dao.userrepo;
 
-import com.example.deliverymanagmentsystem.model.User;
+import com.example.deliverymanagmentsystem.model.user.User;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 

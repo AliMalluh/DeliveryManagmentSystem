@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 public class GlobalException {
 
     @Autowired
-    private MessageSource messageSource;
+    private MessageSource messageSource ;
     @ExceptionHandler(value = {ResourceNotFoundException.class, EmptyResultDataAccessException.class, IncorrectResultSizeDataAccessException.class})
     public ResponseEntity<?> handleResourceNotFoundException (ResourceNotFoundException ex) {
 //        List<String> errors = ex.getBindingResult()

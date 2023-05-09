@@ -11,7 +11,7 @@ public interface UserService {
 
     public User update(User user);
 
-    public Optional<User> get(long id);
+    public User get(long id);
 
     public List<User> getAll() ;
 

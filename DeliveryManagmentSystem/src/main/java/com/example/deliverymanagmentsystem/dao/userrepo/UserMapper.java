@@ -23,23 +23,28 @@ public class UserMapper implements RowMapper<User> {
         user.setLastname(rs.getString("lastname"));
         user.setRole(Roles.valueOf(rs.getString("role")));
         if(rs.getString("role").equals("CLIENT")){
-            user.setStoreId(rs.getLong("store"));
-            Store store = new Store();
-            store.setId(rs.getLong("store"));
-            store.setName(rs.getString("name"));
-            Address address = new Address();
-            Region region = new Region();
-            District district = new District();
-            region.setRegionId(rs.getLong("region_id"));
-            region.setRegionName(rs.getString("region_name"));
-            district.setDistrictId(rs.getLong("district_id"));
-            district.setDistrictName(rs.getString("district_name"));
-            district.setStreet(rs.getString("street"));
-            district.setZipCode(rs.getString("zip_code"));
-            address.setRegion(region);
-            address.setDistrict(district);
-            store.setAddress(address);
-            user.setStore(store);
+            try {
+                user.setStoreId(rs.getLong("store"));
+                Store store = new Store();
+                store.setId(rs.getLong("store"));
+                store.setName(rs.getString("name"));
+                Address address = new Address();
+                Region region = new Region();
+                District district = new District();
+                region.setRegionId(rs.getLong("region_id"));
+                region.setRegionName(rs.getString("region_name"));
+                district.setDistrictId(rs.getLong("district_id"));
+                district.setDistrictName(rs.getString("district_name"));
+                district.setStreet(rs.getString("street"));
+                district.setZipCode(rs.getString("zip_code"));
+                address.setRegion(region);
+                address.setDistrict(district);
+                store.setAddress(address);
+                user.setStore(store);
+            }catch (Exception e){
+
+            }
+
         }
 //        Optional<User> user = Optional.of(new User());
 //        user = userService.get(rs.getLong("user_id"));

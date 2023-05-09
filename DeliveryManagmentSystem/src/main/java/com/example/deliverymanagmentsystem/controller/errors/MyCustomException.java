@@ -1,9 +1,9 @@
 package com.example.deliverymanagmentsystem.controller.errors;
 
-public class ResourceNotFoundException extends RuntimeException {
-    private final String errorCode;
+public class MyCustomException extends RuntimeException {
+    private String errorCode;
 
-    public ResourceNotFoundException(String errorCode, String message) {
+    public MyCustomException(String errorCode, String message) {
         super(message);
         this.errorCode = errorCode;
     }

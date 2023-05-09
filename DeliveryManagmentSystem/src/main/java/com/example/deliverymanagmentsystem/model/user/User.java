@@ -1,30 +1,29 @@
 package com.example.deliverymanagmentsystem.model.user;
 
 import com.example.deliverymanagmentsystem.model.Store;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
+//import javax.validation.Validator;
+//import javax.validation.constraints.NotNull;
 
-import org.jetbrains.annotations.NotNull;
+import lombok.*;
 import org.springframework.data.annotation.Id;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @NotNull
+    @NotEmpty
     private String firstname;
     private String lastname;
     private Roles role;
-    private long storeId;
+    private Long storeId;
     private Store store;
 
 }

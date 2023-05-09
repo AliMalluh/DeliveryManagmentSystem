@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebMvcTest
 @AutoConfigureMockMvc(addFilters = false)
-public class UserMVCTest {
+public class UserConsumerMVCTest {
     private static final long USER_ID = 1;
     private static final String USER_FIRST_NAME_STRING = "Ali";
     private static final String USER_LAST_NAME_STRING = "Malluh";

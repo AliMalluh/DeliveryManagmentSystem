@@ -27,17 +27,9 @@ import java.util.stream.Collectors;
 public class GlobalException {
 
     @Autowired
-    private MessageSource messageSource ;
+    private MessageSource messageSource;
     @ExceptionHandler(value = {ResourceNotFoundException.class, EmptyResultDataAccessException.class, IncorrectResultSizeDataAccessException.class})
     public ResponseEntity<?> handleResourceNotFoundException (ResourceNotFoundException ex) {
-//        List<String> errors = ex.getBindingResult()
-//                .getAllErrors()
-//                .stream()
-//                .map(ObjectError::getDefaultMessage)
-//                .collect(Collectors.toList());
-//        Map<String,Object>
-//        ValidationErrorResponse response = new ValidationErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), (List<String>) ex);
-//        return ResponseEntity.badRequest().body(response);
         String message = messageSource.getMessage(ex.getErrorCode(), null, LocaleContextHolder.getLocale());
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());

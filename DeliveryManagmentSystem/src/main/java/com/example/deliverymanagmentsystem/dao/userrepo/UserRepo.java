@@ -15,4 +15,6 @@ public interface UserRepo {
     List<User> getAll();
 
     void deleteById(long id);
+
+    Optional<User> findByName(String username);
 }

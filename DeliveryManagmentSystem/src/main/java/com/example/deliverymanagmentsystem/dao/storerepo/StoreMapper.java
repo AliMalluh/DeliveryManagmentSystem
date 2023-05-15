@@ -1,18 +1,14 @@
 package com.example.deliverymanagmentsystem.dao.storerepo;
 
-import com.example.deliverymanagmentsystem.model.address.Address;
 import com.example.deliverymanagmentsystem.model.Store;
+import com.example.deliverymanagmentsystem.model.address.Address;
 import com.example.deliverymanagmentsystem.model.address.District;
 import com.example.deliverymanagmentsystem.model.address.Region;
-import com.example.deliverymanagmentsystem.model.user.User;
-import com.example.deliverymanagmentsystem.service.userservice.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Optional;
 
 @Component
 public class StoreMapper implements RowMapper<Store> {

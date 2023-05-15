@@ -1,7 +1,5 @@
 package com.example.deliverymanagmentsystem.model.user;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 public enum Roles {
     ADMIN("Admin"), EMPLOYEE("Employee"), CLIENT("Client");
 

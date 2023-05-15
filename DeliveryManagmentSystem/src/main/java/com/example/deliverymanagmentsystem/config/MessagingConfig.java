@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class MessagingCinfig {
+public class MessagingConfig {
     public static final String QUEUE = "queue";
     public static final String EXCHANGE = "exchange";
     public static final String ROUTING_KEY = "routing";

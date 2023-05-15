@@ -21,6 +21,8 @@ public class UserMapper implements RowMapper<User> {
         user.setId(rs.getLong("id"));
         user.setFirstname(rs.getString("firstname"));
         user.setLastname(rs.getString("lastname"));
+        user.setUserName(rs.getString("username"));
+        user.setPassword(rs.getString("password"));
         user.setRole(Roles.valueOf(rs.getString("role")));
         if(rs.getString("role").equals("CLIENT")){
             try {
@@ -46,9 +48,6 @@ public class UserMapper implements RowMapper<User> {
             }
 
         }
-//        Optional<User> user = Optional.of(new User());
-//        user = userService.get(rs.getLong("user_id"));
-//        store.setUser(user);
         return user;
     }
 }

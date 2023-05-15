@@ -54,7 +54,7 @@ public class UserConsumerMVCTest {
     @Test
     public void testFindById() throws Exception {
         User user = buildUser();
-        when(userService.get(USER_ID)).thenReturn(Optional.of(user));
+        when(userService.get(USER_ID)).thenReturn(user);
         ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
 
         mockMvc.perform(get("http://localhost:8080/user/"+USER_ID).contextPath("")).andExpect(status().isOk())

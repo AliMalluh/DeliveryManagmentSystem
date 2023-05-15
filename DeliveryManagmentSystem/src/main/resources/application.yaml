@@ -9,6 +9,22 @@ spring:
     encoding: UTF-8
   banner:
     location: banner.txt
+#  security:
+#    user:
+#      name: ali
+#      password: malluh
+
 userapi:
   services:
     url: 'http://localhost:8080/user'
+
+hazelcast:
+  network:
+    join:
+      multicast:
+        enabled: true
+
+logging:
+  level:
+    org:
+      springframework: DEBUG

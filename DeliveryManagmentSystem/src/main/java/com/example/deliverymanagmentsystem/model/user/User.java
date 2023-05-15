@@ -1,21 +1,18 @@
 package com.example.deliverymanagmentsystem.model.user;
 
 import com.example.deliverymanagmentsystem.model.Store;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-
-//import javax.validation.Validator;
-//import javax.validation.constraints.NotNull;
-
-import lombok.*;
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
-public class User {
+public class User implements Serializable {
 
     @Id
     private long id;
@@ -25,6 +22,8 @@ public class User {
     private Roles role;
     private Long storeId;
     private Store store;
+    private String userName;
+    private String password;
 
 }
 

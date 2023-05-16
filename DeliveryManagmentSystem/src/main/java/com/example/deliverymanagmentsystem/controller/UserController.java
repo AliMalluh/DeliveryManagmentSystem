@@ -66,8 +66,9 @@ public class UserController {
     }
     @GetMapping
     public ResponseEntity<List<User>> getAll() {
+
         List<User> users = userService.getAll();
-        return new ResponseEntity<>(users,HttpStatus.OK);
+        return ResponseEntity.ok(users);
     }
 
     @DeleteMapping("/{id}")
@@ -86,7 +87,8 @@ public class UserController {
         }
     }
     @GetMapping("/getUser")
-    public String getUserFromToken(){
-        return jwtService.getUserFromToken();
+    public ResponseEntity<User>  getUserFromToken(){
+        User user = jwtService.getUserFromToken();
+        return new ResponseEntity(user, HttpStatus.OK);
     }
 }

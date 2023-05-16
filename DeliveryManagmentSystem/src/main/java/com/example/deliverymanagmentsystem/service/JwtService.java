@@ -1,16 +1,13 @@
 package com.example.deliverymanagmentsystem.service;
 
-import com.example.deliverymanagmentsystem.dao.userrepo.UserRepo;
 import com.example.deliverymanagmentsystem.dao.userrepo.UserRepoImpl;
 import com.example.deliverymanagmentsystem.model.user.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.io.Decoder;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -23,10 +20,10 @@ import java.util.function.Function;
 
 @Component
 public class JwtService {
-    @Autowired
-    private UserRepoImpl userRepo;
     public static final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
     public String TOKEN;
+    @Autowired
+    private UserRepoImpl userRepo;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -42,7 +39,7 @@ public class JwtService {
     }
 
     private Claims extractAllClaims(String token) {
-        return Jwts
+        return   Jwts
                 .parserBuilder()
                 .setSigningKey(getSignKey())
                 .build()
@@ -60,18 +57,9 @@ public class JwtService {
     }
 
 
-    public String generateToken(String userName){
-//        Map<String,Object> claims=new HashMap<>();
-//        return createToken(claims,userName);
-        Claims claims = Jwts.claims().setSubject(userName);
-        Optional<User> user = userRepo.findByName(userName);
-        claims.put("user",user);
-        TOKEN =Jwts.builder()
-//                .setClaims(claims)
-                .setPayload(user.toString())
-                .signWith(getSignKey(), SignatureAlgorithm.HS256)
-                .compact();
-        return TOKEN;
+    public String generateToken(String userName) {
+        Map<String,Object> claims=new HashMap<>();
+        return createToken(claims,userName);
     }
 
     private String createToken(Map<String, Object> claims, String userName) {
@@ -79,17 +67,17 @@ public class JwtService {
                 .setClaims(claims)
                 .setSubject(userName)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()+1000*60*30))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
                 .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
     }
 
     private Key getSignKey() {
-        byte[] keyBytes= Decoders.BASE64.decode(SECRET);
+        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public String getUserFromToken() {
-        return (String) Jwts.parserBuilder()
+    public User getUserFromToken() {
+        return (User) Jwts.parserBuilder()
                 .setSigningKey(getSignKey())
                 .build()
                 .parse(TOKEN)

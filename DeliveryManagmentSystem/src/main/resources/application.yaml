@@ -9,6 +9,23 @@ spring:
     encoding: UTF-8
   banner:
     location: banner.txt
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 984881863986-29gdcfdp9rfstj2to2cr5picmvrg2s9o.apps.googleusercontent.com
+            client-secret: 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
+#            redirect-uri: http://localhost:8080/login/oauth2/code/google
+          github:
+            client-id: Iv1.741f6e709db4019a
+            client-secret: cb1cd88cd786d82c1668ad0a8ace17c9265a7922
+          facebook:
+            client-id: 981590962995398
+            client-secret: ea9c9877258ae1cc17d5203a9750b698
+#            redirect-uri: http://localhost:8080/login/oauth2/code/github
+
+
 #  security:
 #    user:
 #      name: ali

@@ -27,19 +27,25 @@ public class SecurityConfig {
     private JwtAuthFilter authFilter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        return http.csrf().disable()
+         http.csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/user/add","/user/authenticate","/user/getUser").permitAll()
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/user/**").hasAuthority("ADMIN")
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .requestMatchers("/user/**").authenticated()
+//                .and()
+//                .sessionManagement()
+//                .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
                 .and()
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
-                .build();
+                 .oauth2Login();
+//         oauth2 -> oauth2
+//                .redirectionEndpoint(redirection -> redirection
+//                        .baseUri("/login/oauth2/code/google")
+//                )
+
+         return http.build();
     }
     @Bean
     public UserDetailsService userDetailsService() {
